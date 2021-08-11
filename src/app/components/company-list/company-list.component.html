@@ -1,0 +1,25 @@
+<div class="container">
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Per Employee Rate</th>
+      <th>Is Active</th>
+      <th>Is Charges Paid</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let com of company">
+      <td>{{ com.ComopanyId }}</td>
+      <td>{{ com.CompanyName }}</td>
+      <td>{{ com.PerEmployeeRate }}</td>
+      <td>{{ com.IsActive }}</td>
+      <td>{{ com.isMonthlyChargesPaid }}</td>
+      <td><button type="submit" class="btn btn-primary" (click)="editCompany(com.ComopanyId)">Edit</button></td>
+    </tr>
+  </tbody>
+  </table>
+  <button class="btn btn-lg markUnpaid" (click)="markUnpaid()">Mark All As Unpaid</button>
+</div>

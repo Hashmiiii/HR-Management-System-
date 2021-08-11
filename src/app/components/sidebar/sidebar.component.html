@@ -1,0 +1,16 @@
+<div class="navbar navbar-default">
+  <div class="container">
+    <span class="navbar-brand">
+      HR Management System
+    </span>
+
+    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbarHeaderCollapse"></button>
+    <button *ngIf="navService.showNavbar" class="btn btn-primary navbar-right btn-logout" (click)="logout()">Logout</button>
+    <div class="collapse navbar-collapse navbarHeaderCollapse" *ngIf="navService.showNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li *ngIf="navService.employeeType == 'Owner'" routerLinkActive="active current"><a [routerLink]="['/addcompany']">Add Company</a></li>
+        <li *ngIf="navService.employeeType == 'Owner'" routerLinkActive="active current"><a [routerLink]="['/company']">Companies</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
